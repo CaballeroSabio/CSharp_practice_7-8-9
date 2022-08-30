@@ -48,7 +48,7 @@ void ArithmeticMean(int[,] matrixResult)
             sum += matrixResult[i, j];
             res = sum / matrixResult.GetLength(0);
         }
-        Console.WriteLine($"Среднее арифметическое {j+1} столбца: { res }");
+        Console.WriteLine($"Среднее арифметическое {j+1} столбца: {res}");
     }    
 }
 
