@@ -8,37 +8,35 @@
 
 Console.Clear();
 
-float[,] CreateMatrixRndDouble (int m, int n) // создаёт двумерный массив псевдослучайных вещественных чисел
+double[,] CreateMatrixRndDouble (int m, int n) // создаёт двумерный массив псевдослучайных вещественных чисел
 {
-    float[,] matrix = new float[m, n];
+    double[,] matrix = new double[m, n];
     Random rnd = new Random();    
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            float res = Math.Round(rnd.NextSingle()*10, 1);
-            //double resNeg = Math.Round((rnd.NextDouble()-1)*10, 1);
-            matrix[i,j] = res;
-            //matrix[i,j] = resNeg;
+            double res = Math.Round((rnd.NextDouble()*2 - 1)*10, 1);            
+            matrix[i,j] = res;            
         }                
     }    
     return matrix; 
 }
 
-void PrintMatrix(float[,] array)
+void PrintMatrix(double[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             if (j == 0) Console.Write("[");
-            if (j < array.GetLength(1) - 1) Console.Write($"{array[i, j], 3}|");
-            else Console.Write($"{array[i,j], 3}]");
+            if (j < array.GetLength(1) - 1) Console.Write($"{array[i, j], 5}|");
+            else Console.Write($"{array[i,j], 5}]");
         }
         Console.WriteLine();
     }
 }
 
 
-float[,] matrixResult = CreateMatrixRndDouble(3, 4);
+double [,] matrixResult = CreateMatrixRndDouble(5, 5);
 PrintMatrix(matrixResult);
