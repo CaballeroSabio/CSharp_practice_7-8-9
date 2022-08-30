@@ -53,6 +53,8 @@ void ArithmeticMean(int[,] matrixResult)
 }
 
 int[,] matrixResult = GetMatrix(5, 5);
+Console.WriteLine("Генерируем массив");
 PrintMatrix(matrixResult);
+Console.WriteLine("Подсчитываем среднее арифметическое");
 ArithmeticMean(matrixResult);
 Console.WriteLine();
