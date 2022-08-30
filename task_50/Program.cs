@@ -10,9 +10,9 @@
 
 
 Console.Clear();
-Console.Write("Введите число номер строки от 0 до 5: ");
+Console.Write("Введите номер строки: ");
 int numOfRow = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите число номер столбца от 0 до 5: ");
+Console.Write("Введите номер столбца: ");
 int numOfCol = Convert.ToInt32(Console.ReadLine());
 
 int[,] GetMatrix(int m, int n)
@@ -45,7 +45,7 @@ void PrintMatrix(int[,] array)
 
 string FindElValue(int[,] matrixResult, int numOfRow, int numOfCol)
 {   
-    if (numOfRow <= 5 & numOfCol <= 5)
+    if (numOfRow <= 4 && numOfCol <= 4)
     {
         int i = numOfRow;
         int j = numOfCol;
@@ -62,3 +62,4 @@ int[,] matrixResult = GetMatrix(5, 5);
 PrintMatrix(matrixResult);
 string elemValue = FindElValue(matrixResult, numOfRow, numOfCol);
 Console.WriteLine("Значение данного элемента -> " + elemValue);
+Console.WriteLine();
