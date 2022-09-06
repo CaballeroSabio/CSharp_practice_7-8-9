@@ -3,7 +3,7 @@
 массива.
 */
 
-int[,] GetMatrix(int m, int n)
+int[,] GetMatrix(int m, int n) // Создание рандомого массива, заполненного случайными числами
 {
     int[,] matrix = new int[m, n];
     Random rnd = new Random();
@@ -15,10 +15,10 @@ int[,] GetMatrix(int m, int n)
         }
     }
     return matrix;
-} // Создание рандомого массива, заполненного случайными числами
+} 
 
 
-void PrintMatrix(int[,] array)
+void PrintMatrix(int[,] array) // Печать двумерного массива
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -30,8 +30,9 @@ void PrintMatrix(int[,] array)
         }
         Console.WriteLine();
     }
-} // Печать двумерного массива
+} 
 
+/*
 int[,] SwapLines(int[,] matrixResult)
 {
     int size = matrixResult
@@ -40,7 +41,7 @@ int[,] SwapLines(int[,] matrixResult)
 
     }    
 } 
-
+*/
 // второй вариант
 
 void SortArray(int[,] array)
@@ -53,3 +54,8 @@ void SortArray(int[,] array)
     }
 }
 
+int[,] matrixResult = GetMatrix(3, 4);
+PrintMatrix(matrixResult);
+Console.WriteLine();
+SortArray(matrixResult);
+PrintMatrix(matrixResult);
