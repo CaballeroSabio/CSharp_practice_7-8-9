@@ -9,32 +9,7 @@
  */
 
 Console.Clear();
-/*
-int[,,] GetMatrix(int m, int n, int z)
-{
-    int[,,] matrix = new int[m, n, z];
-    Random rnd = new Random();
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            for (int k = 0; k < matrix.GetLength(1); k++)
-            {
-                matrix[i, j, k] = rnd.Next(1,100);
-            }           
-        }
-    }
-    return matrix;
-}
-*/
-/*
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-*/
+
 void PrintMatrix3D (int[,,] matrix3D)
 {
   for (int i = 0; i < matrix3D.GetLength(0); i++)
@@ -87,14 +62,6 @@ void GetMatrix3D(int[,,] matrix3D)
     }
   }
 }
-
-//Console.Clear();
-//Console.WriteLine($"Задача 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.");
-//Console.WriteLine($"\nВведите размер массива X x Y x Z:");
-//int x = InputNumbers("Введите X: ");
-//int y = InputNumbers("Введите Y: ");
-//int z = InputNumbers("Введите Z: ");
-//Console.WriteLine($"");
 
 int[,,] matrix3D = new int[2, 2, 2];
 GetMatrix3D(matrix3D);
