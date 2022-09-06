@@ -8,9 +8,7 @@
  * 2 3 4 5
  */
 
-int[,] array = SetArray(3,4);
-
-PrintMatrix(array);
+Console.Clear();
 
 int[,] SetArray(int rows, int columns)
 {
@@ -39,3 +37,6 @@ void PrintMatrix(int[,] array)
     Console.WriteLine();
     }
 }
+
+int[,] array = SetArray(3,4);
+PrintMatrix(array);
