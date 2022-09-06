@@ -8,7 +8,6 @@
  * 1, 7 -> такого числа в массиве нет
  */
 
-
 Console.Clear();
 Console.Write("Введите номер строки: ");
 int numOfRow = Convert.ToInt32(Console.ReadLine());
