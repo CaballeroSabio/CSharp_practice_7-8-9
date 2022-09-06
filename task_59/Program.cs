@@ -1,10 +1,13 @@
-﻿/*Задача 59: Задайте двумерный массив из целых чисел.
-Напишите программу, которая удалит строку и столбец, на
-пересечении которых расположен наименьший элемент
-массива.
-*/
+﻿/* Задача 59:
+ * Задайте двумерный массив из целых чисел.
+ * Напишите программу, которая удалит строку и столбец,
+ * на пересечении которых расположен наименьший элемент
+ * массива.
+ */
 
-int[,] GetMatrix(int m, int n)
+Console.Clear();
+
+int[,] GetMatrix(int m, int n) // Создание двумерного массива, заполненного случайными числами
 {
     int[,] matrix = new int[m, n];
     Random rnd = new Random();
@@ -16,9 +19,9 @@ int[,] GetMatrix(int m, int n)
         }
     }
     return matrix;
-} // Создание рандомого массива, заполненного случайными числами
+} 
 
-void PrintMatrix(int[,] array)
+void PrintMatrix(int[,] array) // Печать двумерного массива
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -30,7 +33,7 @@ void PrintMatrix(int[,] array)
         }
         Console.WriteLine();
     }
-} // Печать двумерного массива
+} 
 
 int[] FindMinCross(int[,] matrixResult)//Получаем одномерный массив с позицией мин значения
 {
@@ -52,7 +55,6 @@ int[] FindMinCross(int[,] matrixResult)//Получаем одномерный �
     return new int[] { m, n };
 }
 
-
 int[,] RemoveCross(int[,] matrixResult, int[] findMinCross)
 {
     int[,] matrix = new int[matrixResult.GetLength(0) - 1, matrixResult.GetLength(1) - 1];
@@ -67,17 +69,21 @@ int[,] RemoveCross(int[,] matrixResult, int[] findMinCross)
             matrix[i, j] = matrixResult[m, n];
             n++;
         }
-        n = 0;
+        n=0;
         m++;
     }
     return matrix;
 }
 
+Console.Clear();
 
-int[,] matrixResult = GetMatrix(3, 4);
+int[,] matrixResult = GetMatrix(4, 4);
 PrintMatrix(matrixResult);
 
+Console.WriteLine();
 
+int[] findMinCross = FindMinCross(matrixResult);
+int[,] matrix = RemoveCross(matrixResult, findMinCross);
+PrintMatrix(matrix);
 
-int[] FindMinCross = FindMinCross(matrixResult);
-Console.WriteLine(FindMinCross[0] + " " + FindMinCross[1]);
+Console.WriteLine(findMinCross[0] + " " + findMinCross[1]);
