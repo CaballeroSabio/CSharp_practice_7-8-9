@@ -6,11 +6,11 @@
 
 Console.Clear();
 
-Console.WriteLine("Введите начальное число диапазона сложения:");
-int m = Convert.ToInt32 (Console.ReadLine());
+Console.Write("Введите начальное число диапазона сложения: ");
+int m = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите конечное число диапазона сложения:");
-int n = Convert.ToInt32 (Console.ReadLine());
+Console.Write("Введите конечное число диапазона сложения: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
 void GetSumDigitForScale (int num1, int num2, int sum)
 {
