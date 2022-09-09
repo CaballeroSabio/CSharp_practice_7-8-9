@@ -1,53 +1,40 @@
-﻿/*
-Задача 67: Напишите программу, которая будет принимать на вход число и
-возвращать сумму его цифр.
-453 -> 12
-45 -> 9
-*/
+﻿/* Задача 67:
+ * Напишите программу, которая будет принимать на вход число и
+ * возвращать сумму его цифр.
+ * 453 -> 12
+ * 45 -> 9
+ */
 
-Console.WriteLine("Задайте число: ");
-int numM = Convert.ToInt32(Console.ReadLine());
+Console.Clear();
 
-void NaturalNumber(int num)
-{
-    if (num == 0) return;
-    NaturalNumber(num - 1);
-    Console.Write($"{num} ");
-}
+// 1 вариант решения
 
-Console.Write("Задайте число:  ");
-int number = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число: ");
+int m = Convert.ToInt32(Console.ReadLine());
 
 int sum = 0;
 
-int SumNumbers(int num)
+int Sum (int n, int sum)
 {
-   if (num != 0)
-   {
-      sum += num % 10 + SumNumbers(num / 10);
-   }
-
-   return sum;
+    if (n == 0) return sum;
+    sum += n % 10;
+    return Sum (n / 10, sum);
 }
 
-Console.Write(SumNumbers(number));
+int c = Sum (m, 0);
+Console.WriteLine (c);
 
-2
+// 2 вариант решения рабочий
+
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
 
 int GetSumDigit(int num)
 {
-
     int sum = num % 10;
-    if (num >= 1)
-        sum += GetSumDigit(num / 10);
-        
-    return sum;
+    if (num >= 1) sum += GetSumDigit(num / 10);
+    return sum;            
 }
 
-3
-
-int SumNumbers(int num)
-{
-   if (num != 0) sum += num % 10 + SumNumbers(num / 10);
-   return sum;
-}
+int result = GetSumDigit (number);
+Console.WriteLine ($"Сумма цифр равна -> {result}");
