@@ -5,10 +5,10 @@
 
 Console.Clear();
 
-Console.WriteLine("Введите неотрицательное число M:");
+Console.Write("Введите неотрицательное число M: ");
 int m = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите неотрицательное число N:");
+Console.Write("Введите неотрицательное число N: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 int AckermannFunction (int m, int n)
