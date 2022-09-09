@@ -16,13 +16,13 @@ void NaturalNumber (int num, int number)
 {
     if (num == number)
     {
-        Console.WriteLine($"{num} ");
+        Console.Write($"{num} ");
         return;
     }
     if (num > number)
     {
-        Console.WriteLine($"{num} ");
-        NaturalNumber (num - 1, number);
+        Console.Write($"{num} ");
+        NaturalNumber (num - 1, number);        
     }
     else
     {        
@@ -32,6 +32,7 @@ void NaturalNumber (int num, int number)
 }
 
 NaturalNumber(numM, numN);
+Console.WriteLine();
 Console.WriteLine("Press any key");
 Console.ReadKey();
 
